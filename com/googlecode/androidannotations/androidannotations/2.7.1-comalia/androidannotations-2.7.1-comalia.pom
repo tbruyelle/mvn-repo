@@ -3,26 +3,44 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<artifactId>androidannotations-parent</artifactId>
 		<groupId>com.googlecode.androidannotations</groupId>
+		<artifactId>androidannotations-parent</artifactId>
 		<version>2.7.1-comalia</version>
 	</parent>
 
-	<artifactId>androidannotations-api</artifactId>
-	<description>The API jar containing the annotations and the runtime helpers</description>
-	<name>AndroidAnnotations API</name>
-
+	<artifactId>androidannotations</artifactId>
+	<name>AndroidAnnotations Annotation Processor</name>
+	<description>The Annotation Processor jar that generates code</description>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.googlecode.androidannotations</groupId>
+			<artifactId>androidannotations-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.codemodel</groupId>
+			<artifactId>codemodel</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.google.android</groupId>
 			<artifactId>android</artifactId>
 			<version>1.6_r2</version>
-			<scope>provided</scope>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<!-- spring-android-rest-template is required to use the Rest API -->
+			<groupId>org.springframework.android</groupId>
+			<artifactId>spring-android-rest-template</artifactId>
+			<version>1.0.0.RELEASE</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -34,6 +52,7 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
+					<compilerArgument>-proc:none</compilerArgument>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -59,6 +78,14 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>rebel.xml</exclude>
+				</excludes>
+			</resource>
+		</resources>
 	</build>
 
 </project>
