@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.googlecode.androidannotations</groupId>
+  <artifactId>androidannotations-parent</artifactId>
+  <versioning>
+    <release>2.7.1-comalia</release>
+    <versions>
+      <version>2.7.1-comalia</version>
+    </versions>
+    <lastUpdated>20130718073911</lastUpdated>
+  </versioning>
+</metadata>
