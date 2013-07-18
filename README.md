@@ -4,6 +4,7 @@ mvn-repo
 source : http://stackoverflow.com/questions/14013644/hosting-a-maven-repository-on-github
 
 * pom.xml
+
 ```xml
 <properties>
         <github.global.server>github</github.global.server>
